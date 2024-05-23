@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load my_tags %}
+{% load static %}
 {% block content %}
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
@@ -7,15 +7,13 @@
             {% for dog in dogs %}
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="{{ dogs.photo }}">
+                    <img src="{{ dog.photo.url }}" alt="{{ dog.name }}">
                     <div class="card-body">
-                        <p class="card-text">Кличка: {{ dog.name }}</p>
-
+                        <p class="card-text">{{ dog.name }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a class="btn btn-primary" href="{% url 'dogs:dogs_detail' dog.pk %}" role="button">Посмотреть</a>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                             </div>
-                            <small class="text-body-secondary">9 mins</small>
                         </div>
                     </div>
                 </div>
