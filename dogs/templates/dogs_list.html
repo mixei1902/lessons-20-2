@@ -7,13 +7,17 @@
             {% for dog in dogs %}
             <div class="col">
                 <div class="card shadow-sm">
+                    <!-- Отладочный вывод для проверки пути к изображению -->
+                    <p>Image URL: {{ dog.photo.url }}</p>
                     <img src="{{ dog.photo.url }}" alt="{{ dog.name }}">
                     <div class="card-body">
                         <p class="card-text">{{ dog.name }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                             </div>
+                            <small class="text-body-secondary">9 mins</small>
                         </div>
                     </div>
                 </div>
